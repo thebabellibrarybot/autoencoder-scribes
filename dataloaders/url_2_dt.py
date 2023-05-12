@@ -33,6 +33,7 @@ def url_2_binary_array(class_label, url):
 
         # Create the Pandas DataFrame
         df = pd.DataFrame(pixel_dict)
+        print(df, 'df being added to data.csv')
 
         # Save the binarized image as a PNG file
         img_bw.save('binary_image.png')
