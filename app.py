@@ -1,5 +1,7 @@
 import argparse
 from trainer import train
+from trainer.dataloader import dataloader
+from trainer.model import autoencoder
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train Autoencoder model")
@@ -10,4 +12,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    train.train_model(args.epochs, args.data, args.learning_rate)
+    train.train_model(args.epochs, args.data, args.learning_rate, dataloader, autoencoder)
