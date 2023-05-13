@@ -13,4 +13,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    train.train_model(args.epochs, args.data, args.learning_rate, dataloader, autoencoder, args.wandb_proj)
+    train.train_model(args.epochs, args.data, args.learning_rate, dataloader, autoencoder, args.wandb)
