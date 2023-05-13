@@ -80,11 +80,15 @@ def train_model(epochs, data, learning_rate, dataloader, autoencoder, wandb_proj
                 ax[1].imshow(output.numpy()[0], cmap="gray")
                 ax[1].title.set_text("Reconstructed")
                 wandb_img = wandb.Image(fig, caption=f"Loss: {loss.numpy():.5f}")
-                if loss.numpy() < THRESH_LOSS + 0.003:
-                    wandb.log({"test_outlier_loss": loss.numpy()})
-                    outliers.append(wandb)
+                if loss.numpy() < THRESH_LOSS+0.003:
+                    wandb.log({"test_outlier_loss":loss.numpy()})
+                    outliers.append(wandb_img)
+                    continue
+                wandb.log({"extreme_test_outliers_loss":loss.numpy()})
+                extreme_outliers.append(wandb_img)
 
         wandb.log({"test_outliers":outliers})
         wandb.log({"extreme_test_outliers":extreme_outliers})
 
-    wandb.finish()
+        if len(epoch) == len(EPOCHS):
+            wandb.finish()
