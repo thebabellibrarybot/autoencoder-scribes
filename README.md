@@ -18,6 +18,14 @@ run: `python puppetter.py`
 ##### Example characters:
 
 A: <img src="https://www.dhi.ac.uk/san/medievalscribes/images/Sloane1685-43v-a2.jpg" alt="Example Image" width="28">
+D: <img src = 'https://www.dhi.ac.uk/san/medievalscribes/images/eMusaeo116-13r-d3.jpg' alt = 'Example Image D' width = '28'>
+G: <img src = 'https://www.dhi.ac.uk/san/medievalscribes/images/eMusaeo116-13r-g.jpg' alt = 'Example Image G' width = '28'>
+H: <img src = 'https://www.dhi.ac.uk/san/medievalscribes/images/eMusaeo116-13r-h.jpg' alt = 'Example Image H' width = '28'>
+R: <img src = 'https://www.dhi.ac.uk/san/medievalscribes/images/Add10340-10v-r2.jpg' alt = 'Example Image R' width = '28'>
+S: <img src = 'https://www.dhi.ac.uk/san/medievalscribes/images/Harley4826-94v-s3.jpg' alt = 'Example Image S' width = '28'>
+W: <img src = 'https://www.dhi.ac.uk/san/medievalscribes/images/EL26-A-13-1r-w2.jpg' alt = 'Example Image W' width = '28'>
+Y: <img src = 'https://www.dhi.ac.uk/san/medievalscribes/images/Additional25718-47-y.jpg' alt = 'Example Image Y' width = '28'>
+
 
   
 ### Autoencoder
