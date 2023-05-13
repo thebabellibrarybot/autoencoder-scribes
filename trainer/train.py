@@ -6,6 +6,8 @@ import wandb
 
 from tensorflow.keras.losses import MeanSquaredError
 
+def ssim(input_img, output_img):
+    return 1 - tf.reduce_mean(tf.image.ssim(input_img, tf.cast(output_img, tf.float64), max_val=1))
 
 def train_model(epochs, data, learning_rate, dataloader, autoencoder, wandb_proj):
 
@@ -69,10 +71,12 @@ def train_model(epochs, data, learning_rate, dataloader, autoencoder, wandb_proj
         # inference or finding outlines (akak outside of _99th_precentile) with train model
         outliers = []
         extreme_outliers = []
+        all_loss = []
         for image in test_ds:
             output = model(image, training=False)
-            loss = MeanSquaredError()(image, output)
-            wandb.log({"test_loss": loss.numpy()})
+            loss = ssim(image, output)
+            all_loss.append(loss.numpy())
+            wandb.log({"test_loss":loss.numpy()})
             if loss.numpy() > THRESH_LOSS:
                 fig, ax = plt.subplots(1, 2)
                 ax[0].imshow(image.numpy()[0], cmap="gray")
@@ -86,9 +90,5 @@ def train_model(epochs, data, learning_rate, dataloader, autoencoder, wandb_proj
                     continue
                 wandb.log({"extreme_test_outliers_loss":loss.numpy()})
                 extreme_outliers.append(wandb_img)
-
         wandb.log({"test_outliers":outliers})
         wandb.log({"extreme_test_outliers":extreme_outliers})
-
-        if epoch == EPOCHS:
-            wandb.finish()
