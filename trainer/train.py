@@ -5,7 +5,7 @@ import numpy as np
 import wandb
 
 from model import autoencoder
-from data import dataloader
+from dataloader import dataloader
 from tensorflow.keras.losses import MeanSquaredError
 
 
