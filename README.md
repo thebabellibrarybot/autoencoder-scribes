@@ -17,7 +17,7 @@ run: `python puppetter.py`
   
 ##### Example characters:
 
-A: <img src="https://www.dhi.ac.uk/san/medievalscribes/images/Sloane1685-43v-a2.jpg" alt="Example Image" width="400">
+A: <img src="https://www.dhi.ac.uk/san/medievalscribes/images/Sloane1685-43v-a2.jpg" alt="Example Image" width="28">
 
   
 ### Autoencoder
