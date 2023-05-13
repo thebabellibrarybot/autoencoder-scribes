@@ -90,5 +90,5 @@ def train_model(epochs, data, learning_rate, dataloader, autoencoder, wandb_proj
         wandb.log({"test_outliers":outliers})
         wandb.log({"extreme_test_outliers":extreme_outliers})
 
-        if len(epoch) == len(EPOCHS):
+        if epoch == EPOCHS:
             wandb.finish()
