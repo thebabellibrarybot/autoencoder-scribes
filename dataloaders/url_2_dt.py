@@ -25,11 +25,12 @@ def url_2_binary_array(class_label, url):
         arr = np.array(img_resized).flatten()[:785]
 
         # Create a dictionary that represents the binary array as a Pandas DataFrame
-        pixel_dict = {'label': [class_label]}
+        pixel_dict = {'label': class_label}
         pixel_dict.update({f"pixel{i+1}": [val] for i, val in enumerate(arr)})
         
         # Clip the pixel values to 0 or 1
-        pixel_dict = {k: np.clip(v, 0, 1) for k, v in pixel_dict.items()}
+
+#this is also clipping label values...        pixel_dict = {k: np.clip(v, 0, 1) for k, v in pixel_dict.items()}
 
         # Create the Pandas DataFrame
         df = pd.DataFrame(pixel_dict)

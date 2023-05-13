@@ -4,21 +4,25 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def alphabet_to_numbers(s):
-    # convert to lowercase to handle uppercase letters
-    s = s.lower()
-    # initialize empty result list
-    result = []
-    # loop through each character in the string
-    for c in s:
-        # check if the character is a letter
-        if c.isalpha():
-            # convert the letter to its alphabetical position (0-indexed)
-            num = ord(c) - 97
-            # append the number to the result list
-            result.append(num)
-    # return the result list
-    return result
+def char_to_int(char):
+    if char == 'A':
+        return 0
+    elif char == 'D':
+        return 1
+    elif char == 'G':
+        return 2
+    elif char == 'H':
+        return 3
+    elif char == 'R':
+        return 4
+    elif char == 'S':
+        return 5
+    elif char == 'W':
+        return 6
+    elif char == 'Y':
+        return 7
+    else:
+        return 8
 
 def get_nav_links(url):
     # Send a GET request to the URL
@@ -59,9 +63,9 @@ for url in urls:
     if url[0].endswith('nav=off'):
         if not url[1].startswith('Various'):
             i = get_thumbnail_images(url[0])
-            print(url, 'url in urls')
+            print(url, 'url of urls')
             for num, my_url in enumerate(i):
-                my_class = int(alphabet_to_numbers(url[1])[0])
+                my_class = int(char_to_int(url[1]))
                 df = url_2_binary_array(my_class, my_url)
                 add_df_to_csv(df, 'data.csv')
         
