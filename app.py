@@ -9,7 +9,8 @@ if __name__ == "__main__":
     parser.add_argument('--epochs', type=int, default=10, help='Number of epochs to train (default: 10)')
     parser.add_argument('--data', type=str, default='../dataloaders/data.csv', help='Directory where the data is stored (default: data)')
     parser.add_argument('--learning_rate', type=float, default=0.001, help='Learning rate for the optimizer (default: 0.001)')
+    parser.add_argument('--wandb', type=str, default="Autoencoder-Scribes", help = 'Will turn on wandb logging by taking the name of your wandb project (default: autoencoder-scribes aka true for logging)')
 
     args = parser.parse_args()
 
-    train.train_model(args.epochs, args.data, args.learning_rate, dataloader, autoencoder)
+    train.train_model(args.epochs, args.data, args.learning_rate, dataloader, autoencoder, args.wandb_proj)

@@ -7,7 +7,12 @@ import wandb
 from tensorflow.keras.losses import MeanSquaredError
 
 
-def train_model(epochs, data, learning_rate, dataloader, autoencoder):
+def train_model(epochs, data, learning_rate, dataloader, autoencoder, wandb_proj):
+
+    # set up wandb logger
+    wandb.login()
+    wandb.init(project=wandb_proj)
+
     # load model
     model = autoencoder()
 
