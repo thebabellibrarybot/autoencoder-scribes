@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import wandb
 
-from model import autoEncoder
+from model import autoencoder
 from data import dataloader
 from tensorflow.keras.losses import MeanSquaredError
 
 
 def train_model(epochs, data, learning_rate):
     # load model
-    model = autoEncoder()
+    model = autoencoder()
 
     # load data
     loaded_data = dataloader(data)
