@@ -19,10 +19,22 @@ def url_2_binary_array(class_label, url):
         img_bw = ImageOps.invert(img_bw)
 
         # Resize the image to 784x784 pixels
-        img_resized = img_bw.resize((784, 784))
+        img_resized = img_bw.resize((28, 28))
+        print(img_resized, 'img size')
 
         # Convert the image to a numpy array and flatten it
-        arr = np.array(img_resized).flatten()[:785]
+        arr = np.array(img_resized)#.flatten()[:785]
+        print(type(arr))  # <class 'numpy.ndarray'>
+        print(arr.shape)  # (2, 3)
+        print(arr.size)   # 6
+        print(arr.dtype)  # int64
+        print(arr.ndim)  
+        arr = arr.ravel()
+        print(type(arr))  # <class 'numpy.ndarray'>
+        print(arr.shape)  # (2, 3)
+        print(arr.size)   # 6
+        print(arr.dtype)  # int64
+        print(arr.ndim) 
 
         # Create a dictionary that represents the binary array as a Pandas DataFrame
         pixel_dict = {'label': class_label}
