@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import wandb
 
-from model import autoencoder
-from dataloader import dataloader
+from utils.model import autoencoder
+from utils.dataloader import dataloader
 from tensorflow.keras.losses import MeanSquaredError
 
 
