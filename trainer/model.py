@@ -27,9 +27,9 @@ class decoder(keras.Model):
         x = self.cnnT3(x)          
         return x
   #Autoencoder Class
-class autoEncoder(keras.Model):
+class autoencoder(keras.Model):
     def __init__(self):
-        super(autoEncoder, self).__init__()
+        super(autoencoder, self).__init__()
         self.encoder = encoder()
         self.decoder = decoder()
     
