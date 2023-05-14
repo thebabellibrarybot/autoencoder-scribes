@@ -62,12 +62,14 @@ urls = get_nav_links('https://www.medievalscribes.com/index.php?page=about&nav=o
 for url in urls:
     if url[0].endswith('nav=off'):
         if not url[1].startswith('Various'):
-            i = get_thumbnail_images(url[0])
-            print(url, 'url of urls')
-            for num, my_url in enumerate(i):
-                my_class = int(char_to_int(url[1]))
-                df = url_2_binary_array(my_class, my_url)
-                add_df_to_csv(df, 'data.csv')
+            my_class = int(char_to_int(url[1]))
+            if my_class >= 6:
+                i = get_thumbnail_images(url[0])
+                print(url, 'url of urls')
+                for num, my_url in enumerate(i):
+                    my_class = int(char_to_int(url[1]))
+                    df = url_2_binary_array(my_class, my_url)
+                    add_df_to_csv(df, 'data.csv')
         
 
 #i = get_thumbnail_images('https://www.medievalscribes.com/index.php?navtype=letters&letter=1&n=0&browse=letters&nav=off')
