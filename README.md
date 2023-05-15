@@ -1,5 +1,7 @@
 # autoencoder-scribes
 autoencoder and dataloaders for running anomaly detection in medieval scribes version of the MNIST dataset 
+##### view the runs on wandb: 
+https://wandb.ai/babelbots/Autoencoder-Scribes?workspace=user-mumbot
 
 ### Dataset
 
