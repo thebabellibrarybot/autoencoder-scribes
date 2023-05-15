@@ -53,16 +53,17 @@ TBD:
 `python3 app.py`
 
 parameters:
- -- wandb: 'project-name', [default = 'autoencoder-scribes']
+
+ `-- wandb: 'project-name', [default = 'autoencoder-scribes']`
  
- -- train: true/false, [default = true]
+ `-- train: true/false, [default = true]`
  
- -- inference: true/false, [default = true, this will train then run and log inference results]
+ `-- inference: true/false, [default = true, this will train then run and log inference results]`
  
- -- epochs: int, [default = 10]
+ `-- epochs: int, [default = 10]`
  
- -- batch_size: int, [ddefault = 32]
+ `-- batch_size: int, [ddefault = 32]`
  
- -- lr: int, [default = .001 for ssim loss_fn]
+ `-- lr: int, [default = .001 for ssim loss_fn]`
  
- -- sweep: true/false, [default = false, will decide wether or not to run a wandb sweep with metrics set to minimize outliers]
+ `-- sweep: true/false, [default = false, will decide wether or not to run a wandb sweep with metrics set to minimize outliers]`
