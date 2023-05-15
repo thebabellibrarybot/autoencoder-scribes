@@ -36,9 +36,17 @@ TBD:
 
 #### basic usage
 
-git clone https://github.com/thebabellibrarybot/autoencoder-scribes
+`git clone https://github.com/thebabellibrarybot/autoencoder-scribes`
 
 #### TODO: Add req.txt
+
+`python -m venv sribes`
+
+ `source scribes/bin/activate`
+ 
+ `pip install -r req.txt`
+ 
+ `python3 getdata.py`
 
 ##### Training
 
