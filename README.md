@@ -1,8 +1,7 @@
 # autoencoder-scribes
 autoencoder and dataloaders for running anomaly detection in medieval scribes version of the MNIST dataset 
 ##### view the runs on wandb: 
-https://wandb.ai/babelbots/Autoencoder-Scribes?workspace=user-mumbot
-
+[Wandb report of auto-encoder training](https://wandb.ai/babelbots/Autoencoder-Scribes/reports/Overview-of-autoencoder-for-medieval-MNIST-dataset--Vmlldzo0MzgyOTU5)
 ### Dataset
 
   Scrapes [Late Medeival Scribes](https://www.medievalscribes.com/index.php?page=about&nav=off) for images of textura font alphabet and transform images into 28x28 binary images with corresponding labels. Data is compiled by medevalists and historians and was developed by The Centre for Medieval Studies at the University of York and the University of Oxford with technical development provided by The Digital Humanities Institute, University of Sheffield. The project was funded by the Arts and Humanities Research Council
