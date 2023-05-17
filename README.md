@@ -39,7 +39,7 @@ TBD:
 
 #### TODO: Add req.txt
 
-`python -m venv sribes`
+ `python -m venv sribes`
 
  `source scribes/bin/activate`
  
